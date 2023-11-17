@@ -6,6 +6,7 @@
 
 body {
     background-color: #2b2c34;
+    color: #d1d1e9;
 }
 
 .ms_container {
@@ -18,7 +19,14 @@ body {
     align-items: center;
 }
 
-.ms_container>* {
+.ms_buttons .ms_custom_button {
+    background-color: #d1d1e9;
+    color: #2b2c34;
+    border-color: #2b2c34;
+    font-weight: 600;
+}
+
+.ms_container .ms_carousel {
     height: 60%;
 }
 

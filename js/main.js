@@ -1,33 +1,13 @@
 'use strict';
 
-// Funzione per cambiare l'immagine
-let autoplayInterval;
-function changeImage() {
-    allItems[currentImage].classList.remove('ms_active');
-    allThumbnails[currentImage].classList.remove('ms_active_thumbnail');
-
-    if (currentImage < images.length - 1) {
-        currentImage++;
-    } else {
-        currentImage = 0;
-    }
-
-    allItems[currentImage].classList.add('ms_active');
-    allThumbnails[currentImage].classList.add('ms_active_thumbnail');
-}
-
-// Funzione per avviare l'autoplay
-function startAutoplay() {
-    autoplayInterval = setInterval(changeImage, 3000); // Cambia immagine ogni 3 secondi
-}
-// Avvia l'autoplay all'inizio
-startAutoplay();
-
 //Variabili
 const images = ["./img/01.jpg", "./img/02.jpg", "./img/03.jpg", "./img/04.jpg", "./img/05.jpg"];
 const itemsContainer = document.querySelector(".ms_items");
 const prev = document.querySelector('.ms_prev');
 const next = document.querySelector('.ms_next');
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn');
+let autoplayInterval;
 
 let currentImage = 0;
 
@@ -131,3 +111,35 @@ for (let i = 0; i < allThumbnails.length; i++) {
         }
     });
 }
+
+// Funzione per cambiare l'immagine
+function changeImage() {
+    allItems[currentImage].classList.remove('ms_active');
+    allThumbnails[currentImage].classList.remove('ms_active_thumbnail');
+
+    if (currentImage < images.length - 1) {
+        currentImage++;
+    } else {
+        currentImage = 0;
+    }
+
+    allItems[currentImage].classList.add('ms_active');
+    allThumbnails[currentImage].classList.add('ms_active_thumbnail');
+}
+
+// Funzione per avviare l'autoplay
+function startAutoplay() {
+    autoplayInterval = setInterval(changeImage, 3_000); // Cambia immagine ogni 3 secondi
+}
+
+// Funzione per interrompere l'autoplay
+function stopAutoplay() {
+    clearInterval(autoplayInterval);
+}
+
+// Aggiungi eventi per i bottoni Start e Stop
+startBtn.addEventListener('click', startAutoplay);
+stopBtn.addEventListener('click', stopAutoplay);
+
+// Avvia l'autoplay all'inizio
+startAutoplay();

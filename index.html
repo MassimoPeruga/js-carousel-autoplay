@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carosello News</title>
+  <title>Carosello Autoplay</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,19 +24,28 @@
 </head>
 
 <body>
-  <div class="ms_container row">
-    <div class="col-10 p-0">
-      <div class="ms_items">
-        <div class="ms_prev"><i class="fa-solid fa-circle-chevron-up"></i></div>
-        <div class="ms_next"><i class="fa-solid fa-circle-chevron-down"></i></div>
-        <!-- Immagini inserite da js -->
+  <div class="ms_container d-flex flex-column">
+    <div class="row p-3 ms_buttons">
+      <div class="btn-group d-flex justify-content-center align-items-center" role="group" aria-label="Autoplay">
+        <h4 class="mb-1 me-3">Autoplay:</h4>
+        <button id="startBtn" type="button"
+          class="btn btn-primary ms_custom_button rounded-start border-end">Start</button>
+        <button id="stopBtn" type="button" class="btn btn-primary ms_custom_button">Stop</button>
       </div>
     </div>
-    <div class="col-2 p-0">
-      <div class="ms_thumbnails">
-        <!-- Thumbnails inserite da JS -->
+    <div class="row ms_carousel">
+      <div class="col-10 p-0">
+        <div class="ms_items">
+          <div class="ms_prev"><i class="fa-solid fa-circle-chevron-up"></i></div>
+          <div class="ms_next"><i class="fa-solid fa-circle-chevron-down"></i></div>
+          <!-- Immagini inserite da js -->
+        </div>
       </div>
-
+      <div class="col-2 p-0">
+        <div class="ms_thumbnails">
+          <!-- Thumbnails inserite da JS -->
+        </div>
+      </div>
     </div>
   </div>
   <!-- il mio script -->
