@@ -10,8 +10,6 @@ body {
 }
 
 .ms_container {
-    width: 75%;
-    max-width: 1000px;
     height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -28,6 +26,8 @@ body {
 
 .ms_container .ms_carousel {
     height: 60%;
+    width: 75%;
+    max-width: 1000px;
 }
 
 .ms_items {
